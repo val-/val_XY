@@ -3,6 +3,7 @@
 include <./lib/boxes.scad>
 include <./lib/stepper-motors.scad>
 include <./lib/bearings.scad>
+include <./lib/rods.scad>
 
 module stage_XY() {
 
@@ -67,14 +68,6 @@ module hotend() {
     translate([0, -102.2, -69]) rotate([90,0,90]) import("./lib/hotend.stl");
   }
 }
-
-module rod(h, r=6) {
-  color("LightSlateGray") {
-    cylinder(h=h, r=r);
-  }
-}
-
-
 
 
 
