@@ -4,6 +4,7 @@ include <./lib/boxes.scad>
 include <./lib/stepper-motors.scad>
 include <./lib/bearings.scad>
 include <./lib/rods.scad>
+include <./extruder.scad>
 
 module stage_XY() {
 
@@ -57,17 +58,7 @@ module stage_X() {
   pulley_bearing();
 }
 
-module extruder() {
-  translate([0,0,69]) roundedBox([80, 100, 20], 5, true);
-  translate([-12,0,0]) hotend();
-  translate([12,0,0]) hotend();
-}
 
-module hotend() {
-  color("LightSlateGray") {
-    translate([0, -102.2, -69]) rotate([90,0,90]) import("./lib/hotend.stl");
-  }
-}
 
 
 
